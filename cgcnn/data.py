@@ -50,6 +50,7 @@ def get_train_val_test_loader(dataset, collate_fn=default_collate,
         return_test=True.
     """
     total_size = len(dataset)
+    print(total_size)
     if train_ratio is None:
         assert val_ratio + test_ratio < 1
         train_ratio = 1 - val_ratio - test_ratio
@@ -65,13 +66,16 @@ def get_train_val_test_loader(dataset, collate_fn=default_collate,
         test_size = kwargs['test_size']
     else:
         test_size = int(test_ratio * total_size)
+
     if kwargs['val_size']:
         valid_size = kwargs['val_size']
     else:
         valid_size = int(val_ratio * total_size)
+
     train_sampler = SubsetRandomSampler(indices[:train_size])
     val_sampler = SubsetRandomSampler(
         indices[-(valid_size + test_size):-test_size])
+
     if return_test:
         test_sampler = SubsetRandomSampler(indices[-test_size:])
     train_loader = DataLoader(dataset, batch_size=batch_size,
@@ -136,7 +140,7 @@ def collate_pool(dataset_list):
         batch_atom_fea.append(atom_fea)
         batch_nbr_fea.append(nbr_fea)
         batch_nbr_fea_idx.append(nbr_fea_idx+base_idx)
-        new_idx = torch.LongTensor(np.arange(n_i)+base_idx)
+        new_idx = torch.LongTensor(np.arange(n_i)+base_idx) # long tensor value
         crystal_atom_idx.append(new_idx)
         batch_target.append(target)
         batch_cif_ids.append(cif_id)
@@ -147,7 +151,7 @@ def collate_pool(dataset_list):
             crystal_atom_idx),\
         torch.stack(batch_target, dim=0),\
         batch_cif_ids
-
+    # torch.cat是将两个张量（tensor）拼接在一起, 按维数0拼接（竖着拼), 按维数1拼接（横着拼）?? 本处未发现A,B向量拼接
 
 class GaussianDistance(object):
     """
