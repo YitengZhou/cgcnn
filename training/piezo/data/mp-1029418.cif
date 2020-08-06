@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_KSi2N3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.56904408
+_cell_length_b   5.56904408
+_cell_length_c   5.04230000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   118.40307307
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KSi2N3
+_chemical_formula_sum   'K2 Si4 N6'
+_cell_volume   137.55823631
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.350550  0.350550  0.517716  1
+  K  K1  1  0.649450  0.649450  0.017716  1
+  Si  Si2  1  0.684794  0.033280  0.510332  1
+  Si  Si3  1  0.033280  0.684794  0.510332  1
+  Si  Si4  1  0.315206  0.966720  0.010332  1
+  Si  Si5  1  0.966720  0.315206  0.010332  1
+  N  N6  1  0.642869  0.119223  0.175060  1
+  N  N7  1  0.119223  0.642869  0.175060  1
+  N  N8  1  0.357131  0.880777  0.675060  1
+  N  N9  1  0.880777  0.357131  0.675060  1
+  N  N10  1  0.172416  0.172416  0.023499  1
+  N  N11  1  0.827584  0.827584  0.523499  1

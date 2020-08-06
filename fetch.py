@@ -21,10 +21,11 @@ if __name__ == '__main__':
                     'La', 'Ce', 'Pr', 'Nd', 'Pm', 'Sm', 'Eu', 'Gd', 'Tb', 'Dy', 'Ho', 'Er', 'Tm', 'Yb', 'Lu',
                     'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu']
 
-    # Query in material project
-    data = mpr.query(criteria={'elements': {'$in':element_list},
+    # search_key in material project, including elasticity, piezo
+    search_key = 'diel'
+    data = mpr.query(criteria={'elements': {'$in': element_list},
                                'has_bandstructure': True,
-                               'elasticity':{'$exists': True},
+                               search_key: {'$exists': True},
                                },
                      properties=['material_id',
                                  'pretty_formula',
@@ -37,13 +38,20 @@ if __name__ == '__main__':
                                  'energy_per_atom',
                                  'formation_energy_per_atom',
                                  'structure',
-                                 'elasticity'])
-    new_file = open('./training/elasticity/elasticity.csv', 'w', encoding='utf-8')
+                                 search_key])
+    print(data)
+    new_file = open('./training/' + search_key + '/' + search_key + '.csv', 'w', encoding='utf-8')
     csv_writer = csv.writer(new_file)
-    new_file_warnings = open('./training/elasticity/elasticity_warnings.csv', 'w', encoding='utf-8')
-    csv_writer_warnings = csv.writer(new_file_warnings)
+
+    if search_key == 'elasticity':
+        new_file_warnings = open('./training/elasticity/elasticity_warnings.csv', 'w', encoding='utf-8')
+        csv_writer_warnings = csv.writer(new_file_warnings)
+
 
     # 10666 with elasticity and 3948 with warnings label, 6718 without warnings label
+    # 2791 with piezo
+    # 5796 with diel
+
     for i in data:
         row = []
         material_id = i['material_id']
@@ -59,17 +67,36 @@ if __name__ == '__main__':
         row.append(i['formation_energy_per_atom'])
         # save cif and csv files
         c = CifWriter(i['structure'])
+
         # add G_Voigt_Reuss_Hill, K_Voigt_Reuss_Hill, elastic_anisotropy, poisson_ratio
-        elasticity = i['elasticity']
-        row.append(elasticity['G_Voigt_Reuss_Hill'])
-        row.append(elasticity['K_Voigt_Reuss_Hill'])
-        row.append(elasticity['elastic_anisotropy'])
-        row.append(elasticity['poisson_ratio'])
-        if elasticity['warnings']:
-            cif_file = './training/elasticity/data_warn/' + material_id + '.cif'
-            c.write_file(cif_file)
-            csv_writer_warnings.writerow(row)
-        else:
-            cif_file = './training/elasticity/data/' + material_id + '.cif'
-            c.write_file(cif_file)
-            csv_writer.writerow(row)
+        if search_key == 'elasticity':
+            elasticity = i['elasticity']
+            row.append(elasticity['G_Voigt_Reuss_Hill'])
+            row.append(elasticity['K_Voigt_Reuss_Hill'])
+            row.append(elasticity['elastic_anisotropy'])
+            row.append(elasticity['poisson_ratio'])
+            if elasticity['warnings']:
+                cif_file = './training/elasticity/data_warn/' + material_id + '.cif'
+                c.write_file(cif_file)
+                csv_writer_warnings.writerow(row)
+            else:
+                cif_file = './training/elasticity/data/' + material_id + '.cif'
+                c.write_file(cif_file)
+                csv_writer.writerow(row)
+
+        # add eij_max
+        elif search_key == 'piezo':
+            piezo = i['piezo']
+            row.append(piezo['eij_max'])
+
+
+        # add n - dielectric constant, poly_electronic - refractive index, poly_total - ferroelectricity
+        elif search_key == 'diel':
+            diel = i['diel']
+            row.append(piezo['n'])
+            row.append(piezo['poly_electronic'])
+            row.append(piezo['poly_total'])
+
+        cif_file = './training/' + search_key + '/data/' + material_id + '.cif'
+        c.write_file(cif_file)
+        csv_writer.writerow(row)

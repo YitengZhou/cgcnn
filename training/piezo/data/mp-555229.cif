@@ -1,0 +1,44 @@
+# generated using pymatgen
+data_H5CNO2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.72357100
+_cell_length_b   3.90613500
+_cell_length_c   9.18250395
+_cell_angle_alpha   87.11069516
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   H5CNO2
+_chemical_formula_sum   'H10 C2 N2 O4'
+_cell_volume   169.21014080
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  H  H0  1  0.036500  0.163952  0.583763  1
+  H  H1  1  0.264095  0.855716  0.524518  1
+  H  H2  1  0.106914  0.144657  0.401011  1
+  H  H3  1  0.907269  0.836447  0.495618  1
+  H  H4  1  0.963500  0.163952  0.083763  1
+  H  H5  1  0.454558  0.505510  0.770602  1
+  H  H6  1  0.893086  0.144657  0.901011  1
+  H  H7  1  0.735905  0.855716  0.024518  1
+  H  H8  1  0.092731  0.836447  0.995618  1
+  H  H9  1  0.545442  0.505510  0.270602  1
+  C  C10  1  0.370687  0.500417  0.189390  1
+  C  C11  1  0.629313  0.500417  0.689390  1
+  N  N12  1  0.918912  0.000366  0.999905  1
+  N  N13  1  0.081088  0.000366  0.499905  1
+  O  O14  1  0.134694  0.375856  0.232885  1
+  O  O15  1  0.865306  0.375856  0.732885  1
+  O  O16  1  0.422156  0.619780  0.060807  1
+  O  O17  1  0.577844  0.619780  0.560807  1

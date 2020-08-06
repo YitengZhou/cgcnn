@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_AlCo(WO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.05992400
+_cell_length_b   5.47169946
+_cell_length_c   5.74262544
+_cell_angle_alpha   106.45656337
+_cell_angle_beta   89.85486036
+_cell_angle_gamma   110.87107161
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   AlCo(WO4)2
+_chemical_formula_sum   'Al1 Co1 W2 O8'
+_cell_volume   141.61290178
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Al  Al0  1  0.523237  0.145069  0.778333  1
+  Co  Co1  1  0.965455  0.128781  0.321634  1
+  W  W2  1  0.703217  0.593276  0.391232  1
+  W  W3  1  0.217450  0.602077  0.027275  1
+  O  O4  1  0.659752  0.863022  0.639666  1
+  O  O5  1  0.738565  0.331819  0.537164  1
+  O  O6  1  0.642035  0.787258  0.154031  1
+  O  O7  1  0.801754  0.346969  0.043323  1
+  O  O8  1  0.257080  0.881218  0.898350  1
+  O  O9  1  0.285735  0.323365  0.764555  1
+  O  O10  1  0.310155  0.390509  0.258241  1
+  O  O11  1  0.095663  0.802734  0.364692  1

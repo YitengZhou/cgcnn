@@ -1,0 +1,56 @@
+# generated using pymatgen
+data_Ca2Ga2Si(HO4)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.82560442
+_cell_length_b   7.82560442
+_cell_length_c   7.82560442
+_cell_angle_alpha   109.40011086
+_cell_angle_beta   109.40011086
+_cell_angle_gamma   109.61353399
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ca2Ga2Si(HO4)2
+_chemical_formula_sum   'Ca4 Ga4 Si2 H4 O16'
+_cell_volume   368.91793686
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.999333  0.721050  0.004787  1
+  Ca  Ca1  1  0.278950  0.283737  0.278283  1
+  Ca  Ca2  1  0.716263  0.994546  0.995213  1
+  Ca  Ca3  1  0.005454  0.000667  0.721717  1
+  Ga  Ga4  1  0.502659  0.756013  0.257413  1
+  Ga  Ga5  1  0.243987  0.501399  0.746646  1
+  Ga  Ga6  1  0.754754  0.497341  0.253354  1
+  Ga  Ga7  1  0.498601  0.245246  0.742587  1
+  Si  Si8  1  0.250000  0.750000  0.500000  1
+  Si  Si9  1  0.750000  0.250000  0.500000  1
+  H  H10  1  0.349593  0.985226  0.012099  1
+  H  H11  1  0.973126  0.337494  0.987901  1
+  H  H12  1  0.662506  0.650407  0.635632  1
+  H  H13  1  0.014774  0.026874  0.364368  1
+  O  O14  1  0.441063  0.740141  0.001857  1
+  O  O15  1  0.021825  0.731689  0.459306  1
+  O  O16  1  0.000279  0.227235  0.995876  1
+  O  O17  1  0.268311  0.727617  0.290136  1
+  O  O18  1  0.437481  0.978175  0.709863  1
+  O  O19  1  0.231359  0.004403  0.004124  1
+  O  O20  1  0.995597  0.999721  0.226955  1
+  O  O21  1  0.272383  0.562519  0.540694  1
+  O  O22  1  0.560794  0.558937  0.299078  1
+  O  O23  1  0.738284  0.439206  0.998143  1
+  O  O24  1  0.259859  0.261716  0.700922  1
+  O  O25  1  0.729568  0.265168  0.288942  1
+  O  O26  1  0.772765  0.768641  0.773045  1
+  O  O27  1  0.559374  0.270432  0.535600  1
+  O  O28  1  0.734832  0.023774  0.464400  1
+  O  O29  1  0.976226  0.440626  0.711058  1

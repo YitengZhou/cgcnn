@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_K2NaNb(OF2)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.07810100
+_cell_length_b   6.08342755
+_cell_length_c   8.63949561
+_cell_angle_alpha   89.81452900
+_cell_angle_beta   89.94245549
+_cell_angle_gamma   89.97564418
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2NaNb(OF2)2
+_chemical_formula_sum   'K4 Na2 Nb2 O4 F8'
+_cell_volume   319.44942292
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.000679  0.497399  0.247411  1
+  K  K1  1  0.498069  0.995613  0.247799  1
+  K  K2  1  0.504732  0.001261  0.746335  1
+  K  K3  1  0.002563  0.500709  0.753836  1
+  Na  Na4  1  0.499843  0.504840  0.001545  1
+  Na  Na5  1  0.000572  0.002530  0.498857  1
+  Nb  Nb6  1  0.999821  0.003633  0.998909  1
+  Nb  Nb7  1  0.497770  0.502775  0.500071  1
+  O  O8  1  0.222380  0.223496  0.002130  1
+  O  O9  1  0.277794  0.725347  0.500019  1
+  O  O10  1  0.716463  0.278018  0.498110  1
+  O  O11  1  0.776956  0.782796  0.999840  1
+  F  F12  1  0.736666  0.737572  0.496736  1
+  F  F13  1  0.002216  0.006511  0.764055  1
+  F  F14  1  0.998463  0.001695  0.235176  1
+  F  F15  1  0.233699  0.764484  0.002174  1
+  F  F16  1  0.495199  0.504804  0.263403  1
+  F  F17  1  0.496469  0.501670  0.735135  1
+  F  F18  1  0.762917  0.240999  0.997179  1
+  F  F19  1  0.258819  0.268220  0.497809  1

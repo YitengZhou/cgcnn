@@ -1,0 +1,43 @@
+# generated using pymatgen
+data_Na4Sr(SiO3)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.70404941
+_cell_length_b   6.70404941
+_cell_length_c   6.68464732
+_cell_angle_alpha   70.53740683
+_cell_angle_beta   70.53740683
+_cell_angle_gamma   109.41805375
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na4Sr(SiO3)3
+_chemical_formula_sum   'Na4 Sr1 Si3 O9'
+_cell_volume   231.47699043
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.503753  0.496247  0.000000  1
+  Na  Na1  1  0.976046  0.023954  0.500000  1
+  Na  Na2  1  0.977317  0.445068  0.026082  1
+  Na  Na3  1  0.554932  0.022683  0.973918  1
+  Sr  Sr4  1  0.504173  0.495827  0.500000  1
+  Si  Si5  1  0.430904  0.961426  0.535272  1
+  Si  Si6  1  0.039331  0.960669  0.000000  1
+  Si  Si7  1  0.038574  0.569096  0.464728  1
+  O  O8  1  0.022144  0.753313  0.238588  1
+  O  O9  1  0.166265  0.426339  0.373709  1
+  O  O10  1  0.769793  0.423386  0.701469  1
+  O  O11  1  0.573661  0.833735  0.626291  1
+  O  O12  1  0.576614  0.230207  0.298531  1
+  O  O13  1  0.162072  0.227272  0.972266  1
+  O  O14  1  0.246687  0.977856  0.761412  1
+  O  O15  1  0.237006  0.762994  0.500000  1
+  O  O16  1  0.772728  0.837928  0.027734  1

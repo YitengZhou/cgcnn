@@ -1,0 +1,51 @@
+# generated using pymatgen
+data_K2ZnH4(I2O7)2
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.01567136
+_cell_length_b   8.01567136
+_cell_length_c   8.35483911
+_cell_angle_alpha   59.01468658
+_cell_angle_beta   59.01468658
+_cell_angle_gamma   58.09461876
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2ZnH4(I2O7)2
+_chemical_formula_sum   'K2 Zn1 H4 I4 O14'
+_cell_volume   368.30862812
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.975738  0.024262  0.000000  1
+  K  K1  1  0.499941  0.500059  0.000000  1
+  Zn  Zn2  1  0.041421  0.958579  0.500000  1
+  H  H3  1  0.423106  0.670431  0.374391  1
+  H  H4  1  0.661013  0.243151  0.471009  1
+  H  H5  1  0.756849  0.338987  0.528991  1
+  H  H6  1  0.329569  0.576894  0.625609  1
+  I  I7  1  0.471332  0.004429  0.016562  1
+  I  I8  1  0.994865  0.557362  0.483267  1
+  I  I9  1  0.442638  0.005135  0.516733  1
+  I  I10  1  0.995571  0.528668  0.983438  1
+  O  O11  1  0.563881  0.717893  0.135144  1
+  O  O12  1  0.558471  0.074043  0.131172  1
+  O  O13  1  0.192584  0.057288  0.168587  1
+  O  O14  1  0.071078  0.603927  0.219222  1
+  O  O15  1  0.486829  0.248130  0.413615  1
+  O  O16  1  0.880556  0.835350  0.465548  1
+  O  O17  1  0.780470  0.219530  0.500000  1
+  O  O18  1  0.306927  0.693073  0.500000  1
+  O  O19  1  0.164650  0.119444  0.534452  1
+  O  O20  1  0.751870  0.513171  0.586385  1
+  O  O21  1  0.396073  0.928922  0.780778  1
+  O  O22  1  0.942712  0.807416  0.831413  1
+  O  O23  1  0.925957  0.441529  0.868828  1
+  O  O24  1  0.282107  0.436119  0.864856  1

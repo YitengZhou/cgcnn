@@ -1,0 +1,42 @@
+# generated using pymatgen
+data_Na2Ca2(CO3)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.63845401
+_cell_length_b   6.63845401
+_cell_length_c   5.00689700
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   114.34372355
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Na2Ca2(CO3)3
+_chemical_formula_sum   'Na2 Ca2 C3 O9'
+_cell_volume   201.03114706
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Na  Na0  1  0.074123  0.074123  0.000000  1
+  Na  Na1  1  0.387629  0.387629  0.500000  1
+  Ca  Ca2  1  0.784991  0.217753  0.500000  1
+  Ca  Ca3  1  0.217753  0.784991  0.500000  1
+  C  C4  1  0.126098  0.534289  0.000000  1
+  C  C5  1  0.534289  0.126098  0.000000  1
+  C  C6  1  0.774275  0.774275  0.500000  1
+  O  O7  1  0.586775  0.789818  0.500000  1
+  O  O8  1  0.789818  0.586775  0.500000  1
+  O  O9  1  0.123374  0.727536  0.000000  1
+  O  O10  1  0.958163  0.958163  0.500000  1
+  O  O11  1  0.727536  0.123374  0.000000  1
+  O  O12  1  0.130382  0.439155  0.773893  1
+  O  O13  1  0.439155  0.130382  0.226107  1
+  O  O14  1  0.130382  0.439155  0.226107  1
+  O  O15  1  0.439155  0.130382  0.773893  1

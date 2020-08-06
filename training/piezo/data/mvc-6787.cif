@@ -1,0 +1,36 @@
+# generated using pymatgen
+data_Zn2CuWO6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.99057600
+_cell_length_b   5.37711745
+_cell_length_c   5.42579937
+_cell_angle_alpha   114.93980258
+_cell_angle_beta   116.11797294
+_cell_angle_gamma   89.82371542
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Zn2CuWO6
+_chemical_formula_sum   'Zn2 Cu1 W1 O6'
+_cell_volume   115.52456000
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Zn  Zn0  1  0.288073  0.819283  0.536826  1
+  Zn  Zn1  1  0.730120  0.342177  0.529267  1
+  Cu  Cu2  1  0.481797  0.483274  0.983358  1
+  W  W3  1  0.991564  0.980927  0.988210  1
+  O  O4  1  0.694139  0.187587  0.811030  1
+  O  O5  1  0.245419  0.739636  0.132693  1
+  O  O6  1  0.998602  0.144599  0.375092  1
+  O  O7  1  0.342691  0.234334  0.107320  1
+  O  O8  1  0.603624  0.678035  0.804570  1
+  O  O9  1  0.935226  0.730751  0.575695  1

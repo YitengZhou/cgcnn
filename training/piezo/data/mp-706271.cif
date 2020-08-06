@@ -1,0 +1,46 @@
+# generated using pymatgen
+data_K2NaMo(OF)3
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   6.02599600
+_cell_length_b   6.02599600
+_cell_length_c   8.67309800
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   K2NaMo(OF)3
+_chemical_formula_sum   'K4 Na2 Mo2 O6 F6'
+_cell_volume   314.94297948
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  K  K0  1  0.500000  0.000000  0.758320  1
+  K  K1  1  0.000000  0.500000  0.258320  1
+  K  K2  1  0.500000  0.000000  0.258320  1
+  K  K3  1  0.000000  0.500000  0.758320  1
+  Na  Na4  1  0.500000  0.500000  0.505430  1
+  Na  Na5  1  0.000000  0.000000  0.005430  1
+  Mo  Mo6  1  0.500000  0.500000  0.022577  1
+  Mo  Mo7  1  0.000000  0.000000  0.522577  1
+  O  O8  1  0.500000  0.500000  0.227616  1
+  O  O9  1  0.712390  0.287610  0.980779  1
+  O  O10  1  0.212390  0.212390  0.480779  1
+  O  O11  1  0.000000  0.000000  0.727616  1
+  O  O12  1  0.787610  0.787610  0.480779  1
+  O  O13  1  0.287610  0.712390  0.980779  1
+  F  F14  1  0.236168  0.763832  0.503225  1
+  F  F15  1  0.500000  0.500000  0.765632  1
+  F  F16  1  0.263832  0.263832  0.003225  1
+  F  F17  1  0.000000  0.000000  0.265632  1
+  F  F18  1  0.736168  0.736168  0.003225  1
+  F  F19  1  0.763832  0.236168  0.503225  1

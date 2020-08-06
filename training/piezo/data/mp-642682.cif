@@ -1,0 +1,38 @@
+# generated using pymatgen
+data_CsHO
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   4.41278300
+_cell_length_b   4.46863600
+_cell_length_c   13.18941100
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   CsHO
+_chemical_formula_sum   'Cs4 H4 O4'
+_cell_volume   260.08359108
+_cell_formula_units_Z   4
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cs  Cs0  1  0.251378  0.992436  0.650336  1
+  Cs  Cs1  1  0.751378  0.507564  0.349664  1
+  Cs  Cs2  1  0.748622  0.492436  0.849664  1
+  Cs  Cs3  1  0.248622  0.007564  0.150336  1
+  H  H4  1  0.355856  0.996694  0.945330  1
+  H  H5  1  0.855856  0.503306  0.054670  1
+  H  H6  1  0.644144  0.496694  0.554670  1
+  H  H7  1  0.144144  0.003306  0.445330  1
+  O  O8  1  0.234318  0.998842  0.883999  1
+  O  O9  1  0.734318  0.501158  0.116001  1
+  O  O10  1  0.765682  0.498842  0.616001  1
+  O  O11  1  0.265682  0.001158  0.383999  1

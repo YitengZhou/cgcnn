@@ -1,0 +1,39 @@
+# generated using pymatgen
+data_Te7As5I
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.72513627
+_cell_length_b   7.72513627
+_cell_length_c   14.57231689
+_cell_angle_alpha   70.73968218
+_cell_angle_beta   70.73968218
+_cell_angle_gamma   30.25686890
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Te7As5I
+_chemical_formula_sum   'Te7 As5 I1'
+_cell_volume   411.81772800
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Te  Te0  1  0.614161  0.614161  0.322075  1
+  Te  Te1  1  0.924676  0.924676  0.553012  1
+  Te  Te2  1  0.231289  0.231289  0.788678  1
+  Te  Te3  1  0.959648  0.959648  0.827283  1
+  Te  Te4  1  0.645850  0.645850  0.594960  1
+  Te  Te5  1  0.334928  0.334928  0.373497  1
+  Te  Te6  1  0.035199  0.035199  0.107909  1
+  As  As7  1  0.496921  0.496921  0.000833  1
+  As  As8  1  0.806104  0.806104  0.259696  1
+  As  As9  1  0.122605  0.122605  0.463662  1
+  As  As10  1  0.451098  0.451098  0.678138  1
+  As  As11  1  0.769040  0.769040  0.896572  1
+  I  I12  1  0.303082  0.303082  0.075986  1
