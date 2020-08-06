@@ -2,11 +2,9 @@
 /test/3207
 /test/19966
 /test/36835
-
 /test/elasticity/data
 /training/elasticity/data
 /training/elasticity/data_warn
-
 /training/piezo/data
 
 # .DS_Store
