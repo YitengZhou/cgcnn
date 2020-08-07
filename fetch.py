@@ -1,5 +1,6 @@
 from pymatgen import MPRester
 from pymatgen.io.cif import CifWriter
+import numpy as np
 import csv
 import os
 import math
@@ -23,6 +24,7 @@ if __name__ == '__main__':
 
     # search_key in material project, including elasticity, piezo
     search_key = 'diel'
+
     data = mpr.query(criteria={'elements': {'$in': element_list},
                                'has_bandstructure': True,
                                search_key: {'$exists': True},
@@ -39,6 +41,7 @@ if __name__ == '__main__':
                                  'formation_energy_per_atom',
                                  'structure',
                                  search_key])
+
     print(data)
     new_file = open('./training/' + search_key + '/' + search_key + '.csv', 'w', encoding='utf-8')
     csv_writer = csv.writer(new_file)
@@ -93,9 +96,9 @@ if __name__ == '__main__':
         # add n - dielectric constant, poly_electronic - refractive index, poly_total - ferroelectricity
         elif search_key == 'diel':
             diel = i['diel']
-            row.append(piezo['n'])
-            row.append(piezo['poly_electronic'])
-            row.append(piezo['poly_total'])
+            row.append(diel['n'])
+            row.append(diel['poly_electronic'])
+            row.append(diel['poly_total'])
 
         cif_file = './training/' + search_key + '/data/' + material_id + '.cif'
         c.write_file(cif_file)

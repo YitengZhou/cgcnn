@@ -6,6 +6,8 @@
 /training/elasticity/data
 /training/elasticity/data_warn
 /training/piezo/data
+/training/diel/data
+/training/energy/data
 
 # .DS_Store
 .DS_Store
