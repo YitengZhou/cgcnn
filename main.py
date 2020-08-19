@@ -127,7 +127,6 @@ def main():
                                 sample(range(len(dataset)), 500)]
         _, sample_target, _ = collate_pool(sample_data_list)
         normalizer = Normalizer(sample_target)
-
     # build model
     structures, _, _ = dataset[0]
     orig_atom_fea_len = structures[0].shape[-1]

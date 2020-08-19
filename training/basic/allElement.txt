@@ -1,0 +1,69 @@
+option = {
+    backgroundColor:'white', //设置无背景色
+    color: ['#3398DB'],
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {show: true},
+            dataView: {show: true, readOnly: false},
+            magicType: {
+                show: true,
+                type: ['pie', 'funnel']
+            },
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['1', '2', '3', '4', '5', '6', '7'],
+            axisTick: {
+                alignWithLabel: true,
+                inside: true
+            },
+            axisLabel: {
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            }
+
+        }
+    ],
+    yAxis: [
+        {
+            type: 'log',
+            // splitLine:{show: false},//去除网格线
+            axisTick:{
+                inside: true
+            },
+            axisLabel: {
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            }
+        }
+    ],
+    series: [
+        {
+            name: '直接访问',
+            type: 'bar',
+            barWidth: '60%',
+            data: [372, 8494, 24758, 13642, 4767, 660,55,1]
+        }
+    ]
+};

@@ -1,0 +1,57 @@
+option = {
+    backgroundColor:'white', //设置无背景色
+    title: {
+        text: '南丁格尔玫瑰图',
+        subtext: '纯属虚构',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        left: 'center',
+        top: 'bottom',
+        data: ['monoclinic', 'hexagonal', 'cubic', 'trigonal', 'tetragonal', 'orthorhombic', 'triclinic']
+    },
+    toolbox: {
+        show: true,
+        feature: {
+            mark: {show: true},
+            dataView: {show: true, readOnly: false},
+            magicType: {
+                show: true,
+                type: ['pie', 'funnel']
+            },
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    series: [
+        {
+            name: '面积模式',
+            type: 'pie',
+            radius: [40, 200],
+            center: ['50%', '50%'],
+            roseType: 'area',
+            label:{
+                normal:{
+                    textStyle:{
+                        fontStyle:'bold',
+                        show:true,
+                        fontSize:20
+                    }
+                }
+            },
+            data: [
+                {value: 7706, name: 'Cubic\n7706\n14.61%'},
+                {value: 5997, name: 'Tetragonal\n5997\n11.37%'},
+                {value: 10611, name: 'Orthorhombic\n10611\n20.12%'},
+                {value: 5307, name: 'Trigonal\n5307\n10.06%'},
+                {value: 3840, name: 'Hexagonal\n3840\n7.28%'},
+                {value: 13589, name: 'Monoclinic\n13589\n25.76%'},
+                {value: 5698, name: 'Triclinic\n5698\n10.80%'}
+            ]
+        }
+    ]
+};
