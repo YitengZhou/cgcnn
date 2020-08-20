@@ -324,11 +324,11 @@ class CIFData(Dataset):
         cif_id, target = self.id_prop_data[idx]
         crystal = Structure.from_file(os.path.join(self.root_dir,
                                                    cif_id+'.cif'))
+        # full_formula获得每一个原子的向量值
         atom_fea = np.vstack([self.ari.get_atom_fea(crystal[i].specie.number)
                               for i in range(len(crystal))])
+        # 变成张量
         atom_fea = torch.Tensor(atom_fea)
-        print(cif_id)
-        print(len(atom_fea))
         all_nbrs = crystal.get_all_neighbors(self.radius, include_index=True)
         all_nbrs = [sorted(nbrs, key=lambda x: x[1]) for nbrs in all_nbrs]
         nbr_fea_idx, nbr_fea = [], []
@@ -347,10 +347,12 @@ class CIFData(Dataset):
                                             nbr[:self.max_num_nbr])))
                 nbr_fea.append(list(map(lambda x: x[1],
                                         nbr[:self.max_num_nbr])))
+        # nbr_fea_idx更偏向于结构NaCl= KCl, nbr_fea = 12最近原子的能量
         nbr_fea_idx, nbr_fea = np.array(nbr_fea_idx), np.array(nbr_fea)
         nbr_fea = self.gdf.expand(nbr_fea)
         atom_fea = torch.Tensor(atom_fea)
         nbr_fea = torch.Tensor(nbr_fea)
         nbr_fea_idx = torch.LongTensor(nbr_fea_idx)
+        # 保留3位小数的target
         target = torch.Tensor([float(target)])
         return (atom_fea, nbr_fea, nbr_fea_idx), target, cif_id

@@ -125,6 +125,7 @@ def main():
         else:
             sample_data_list = [dataset[i] for i in
                                 sample(range(len(dataset)), 500)]
+
         _, sample_target, _ = collate_pool(sample_data_list)
         normalizer = Normalizer(sample_target)
     # build model
@@ -216,6 +217,9 @@ def train(train_loader, model, criterion, optimizer, epoch, normalizer):
     losses = AverageMeter()
     if args.task == 'regression':
         mae_errors = AverageMeter()
+        # add function
+        rmse_errors = AverageMeter()
+        r2_errors = AverageMeter()
     else:
         accuracies = AverageMeter()
         precisions = AverageMeter()
@@ -260,6 +264,11 @@ def train(train_loader, model, criterion, optimizer, epoch, normalizer):
             mae_error = mae(normalizer.denorm(output.data.cpu()), target)
             losses.update(loss.data.cpu(), target.size(0))
             mae_errors.update(mae_error, target.size(0))
+            # add function
+            rmse_error = rmse(normalizer.denorm(output.data.cpu()), target)
+            rmse_errors.update(rmse_error, target.size(0))
+            r2_error = r2(normalizer.denorm(output.data.cpu()), target)
+            r2_errors.update(r2_error, target.size(0))
         else:
             accuracy, precision, recall, fscore, auc_score = \
                 class_eval(output.data.cpu(), target)
@@ -285,9 +294,12 @@ def train(train_loader, model, criterion, optimizer, epoch, normalizer):
                       'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                       'Data {data_time.val:.3f} ({data_time.avg:.3f})\t'
                       'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
-                      'MAE {mae_errors.val:.3f} ({mae_errors.avg:.3f})'.format(
+                      'MAE {mae_errors.val:.3f} ({mae_errors.avg:.3f})\t'
+                      'RMSE {rmse_errors.val:.3f} ({rmse_errors.avg:.3f})\t'
+                      'R2 {r2_errors.val:.3f} ({r2_errors.avg:.3f})\t'.format(
                     epoch, i, len(train_loader), batch_time=batch_time,
-                    data_time=data_time, loss=losses, mae_errors=mae_errors)
+                    data_time=data_time, loss=losses, mae_errors=mae_errors,
+                    rmse_errors=rmse_errors,r2_errors=r2_errors)
                 )
             else:
                 print('Epoch: [{0}][{1}/{2}]\t'
@@ -311,6 +323,9 @@ def validate(val_loader, model, criterion, normalizer, test=False):
     losses = AverageMeter()
     if args.task == 'regression':
         mae_errors = AverageMeter()
+        # add function
+        rmse_errors = AverageMeter()
+        r2_errors = AverageMeter()
     else:
         accuracies = AverageMeter()
         precisions = AverageMeter()
@@ -359,6 +374,11 @@ def validate(val_loader, model, criterion, normalizer, test=False):
             mae_error = mae(normalizer.denorm(output.data.cpu()), target)
             losses.update(loss.data.cpu().item(), target.size(0))
             mae_errors.update(mae_error, target.size(0))
+            # add function
+            rmse_error = rmse(normalizer.denorm(output.data.cpu()), target)
+            rmse_errors.update(rmse_error, target.size(0))
+            r2_error = r2(normalizer.denorm(output.data.cpu()), target)
+            r2_errors.update(r2_error, target.size(0))
             if test:
                 test_pred = normalizer.denorm(output.data.cpu())
                 test_target = target
@@ -391,9 +411,12 @@ def validate(val_loader, model, criterion, normalizer, test=False):
                 print('Test: [{0}/{1}]\t'
                       'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                       'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
-                      'MAE {mae_errors.val:.3f} ({mae_errors.avg:.3f})'.format(
+                      'MAE {mae_errors.val:.3f} ({mae_errors.avg:.3f})\t'
+                      'RMSE {rmse_errors.val:.3f} ({rmse_errors.avg:.3f})\t'
+                      'R2 {r2_errors.val:.3f} ({r2_errors.avg:.3f})\t'
+                    .format(
                     i, len(val_loader), batch_time=batch_time, loss=losses,
-                    mae_errors=mae_errors))
+                    mae_errors=mae_errors,rmse_errors=rmse_errors,r2_errors=r2_errors))
             else:
                 print('Test: [{0}/{1}]\t'
                       'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
@@ -418,8 +441,10 @@ def validate(val_loader, model, criterion, normalizer, test=False):
     else:
         star_label = '*'
     if args.task == 'regression':
-        print(' {star} MAE {mae_errors.avg:.3f}'.format(star=star_label,
-                                                        mae_errors=mae_errors))
+        print(' {star} MAE {mae_errors.avg:.3f}\t'
+              'RMSE {rmse_errors.avg:.3f}\t'
+              'R2 {r2_errors.avg:.3f}'.format(star=star_label, mae_errors=mae_errors, rmse_errors=rmse_errors,
+                                              r2_errors=r2_errors))
         return mae_errors.avg
     else:
         print(' {star} AUC {auc.avg:.3f}'.format(star=star_label,
@@ -462,6 +487,31 @@ def mae(prediction, target):
     """
     return torch.mean(torch.abs(target - prediction))
 
+# Add new function
+def rmse(prediction, target):
+    """
+    Computes the Root Mean Squared Error between prediction and target
+
+    Parameters
+    ----------
+
+    prediction: torch.Tensor (N, 1)
+    target: torch.Tensor (N, 1)
+    """
+    return torch.sqrt(torch.mean(torch.abs(target - prediction)*torch.abs(target - prediction)))
+
+def r2(prediction, target):
+    """
+    Computes the R Square between prediction and target
+
+    Parameters
+    ----------
+
+    prediction: torch.Tensor (N, 1)
+    target: torch.Tensor (N, 1)
+    """
+    avg = torch.mean(target)
+    return 1-torch.mean((torch.abs(target - prediction)*torch.abs(target - prediction))/torch.mean((torch.abs(avg - target)*torch.abs(avg - target))))
 
 def class_eval(prediction, target):
     prediction = np.exp(prediction.numpy())
