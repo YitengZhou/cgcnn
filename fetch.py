@@ -7,7 +7,7 @@ import math
 
 # Fetch elasticity properties from Material Project
 if __name__ == '__main__':
-    MAPI_KEY = 'aT5BgxSEFI3bAcZ8'  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
+    MAPI_KEY = 'h9GBsMfA1JvXbC7n'  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
     QUERY = 'mp-1180346'  # change this to the mp-id of your compound of interest
 
     mpr = MPRester(MAPI_KEY)  # object for connecting to MP Rest interface

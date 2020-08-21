@@ -77,7 +77,7 @@ parser.add_argument('--optim', default='SGD', type=str, metavar='SGD',
                     help='choose an optimizer, SGD or Adam, (default: SGD)')
 parser.add_argument('--atom-fea-len', default=64, type=int, metavar='N',
                     help='number of hidden atom features in conv layers')
-parser.add_argument('--h-fea-len', default=128, type=int, metavar='N',
+parser.add_argument('--h-fea-len', default=128,     type=int, metavar='N',
                     help='number of hidden features after pooling')
 parser.add_argument('--n-conv', default=3, type=int, metavar='N',
                     help='number of conv layers')

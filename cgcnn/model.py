@@ -79,6 +79,11 @@ class CrystalGraphConvNet(nn.Module):
     Create a crystal graph convolutional neural network for predicting total
     material properties.
     """
+    # 原始
+    # self, orig_atom_fea_len, nbr_fea_len,
+    #                  atom_fea_len=64, n_conv=3, h_fea_len=128, n_h=1,
+    #                  classification=False
+    # formation ~1000
     def __init__(self, orig_atom_fea_len, nbr_fea_len,
                  atom_fea_len=64, n_conv=3, h_fea_len=128, n_h=1,
                  classification=False):
