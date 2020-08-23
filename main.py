@@ -112,7 +112,6 @@ def main():
         val_size=args.val_size,
         test_size=args.test_size,
         return_test=True)
-
     # obtain target value normalizer
     if args.task == 'classification':
         normalizer = Normalizer(torch.zeros(2))

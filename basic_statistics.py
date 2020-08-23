@@ -65,6 +65,7 @@ print(len(intersection))
 # nelement and nsite
 ne = {}
 ns = {}
+ns_st = {}
 with open('training/energy/energy.csv', 'r', encoding='utf-8') as en:
     reader = csv.reader(en)
     for row in reader:
@@ -72,11 +73,17 @@ with open('training/energy/energy.csv', 'r', encoding='utf-8') as en:
         ne[nelement] = ne.get(nelement, 0) + 1
         nsite = row[3]
         ns[nsite] = ns.get(nsite, 0) + 1
+        ns_new = int(row[3])//20
+        ns_st[ns_new] = ns_st.get(ns_new,0)+1
     print('nelement')
     print(len(ne))
     print(ne)
     print('nsite')
     print(len(ns))
     print(ns)
+    print(sorted(ns))
+    print('nstie_new')
+    print(len(ns_st))
+    print(ns_st)
 
 
