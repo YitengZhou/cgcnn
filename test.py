@@ -6,7 +6,7 @@ import json
 import math
 
 if __name__ == "__main__":
-    MAPI_KEY = "aT5BgxSEFI3bAcZ8"  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
+    MAPI_KEY = "h9GBsMfA1JvXbC7n"  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
     QUERY = "mp-1180346"  # change this to the mp-id of your compound of interest
     # QUERY = "TiO"  # change this to a formula of interest
     # QUERY = "Ti-O"  # change this to a chemical system of interest
@@ -58,28 +58,28 @@ if __name__ == "__main__":
     # c = CifWriter(structure)
     # c.write_file('./test/1/22862.cif')
 
-    # test all entity 0804 - 89 elements
-    element_list = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar',
-                    'K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr',
-                    'Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe',
-                    'Cs','Ba','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi',
-                    'La','Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
-                    'Ac','Th','Pa','U','Np','Pu']
-    # element_list = ['C','O']
-    # print(len(element_list))
-
-    # results = mpr.query(criteria={'material_id': QUERY},
-    #                     properties=['full_formula','band_gap','exp.tags', 'icsd_ids','formation_energy_per_atom'])
-    # results = data = mpr.query(criteria={'elements': {'$in': element_list},"has_bandstructure": True}, properties=['full_formula','band_gap','exp.tags', 'icsd_ids','formation_energy_per_atom'])
-
-
-    # search all elements without warning label
-    results = data = mpr.query(criteria={'elements': {'$in':element_list},"has_bandstructure": True,"elasticity": {"$exists": True}}, properties=['pretty_formula','band_gap','exp.tags', 'icsd_ids','formation_energy_per_atom'])
-    print(len(results))
-    print(results)
-    for i in results:
-        pretty_formula = i['pretty_formula']
-        print(pretty_formula)
+    # # test all entity 0804 - 89 elements
+    # element_list = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar',
+    #                 'K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr',
+    #                 'Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe',
+    #                 'Cs','Ba','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi',
+    #                 'La','Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu',
+    #                 'Ac','Th','Pa','U','Np','Pu']
+    # # element_list = ['C','O']
+    # # print(len(element_list))
+    #
+    # # results = mpr.query(criteria={'material_id': QUERY},
+    # #                     properties=['full_formula','band_gap','exp.tags', 'icsd_ids','formation_energy_per_atom'])
+    # # results = data = mpr.query(criteria={'elements': {'$in': element_list},"has_bandstructure": True}, properties=['full_formula','band_gap','exp.tags', 'icsd_ids','formation_energy_per_atom'])
+    #
+    #
+    # # search all elements without warning label
+    # results = data = mpr.query(criteria={'elements': {'$in':element_list},"has_bandstructure": True,"elasticity": {"$exists": True}}, properties=['pretty_formula','band_gap','exp.tags', 'icsd_ids','formation_energy_per_atom'])
+    # print(len(results))
+    # print(results)
+    # for i in results:
+    #     pretty_formula = i['pretty_formula']
+    #     print(pretty_formula)
 
     # search all elasticity
     # results = mpr.query({"elasticity": {"$exists": True}},

@@ -28,6 +28,7 @@ args = parser.parse_args(sys.argv[1:])
 if args.resume:
     if os.path.isfile(args.resume):
         print("=> loading checkpoint '{}'".format(args.resume))
+        # checkpoint = torch.load(args.resume, map_location='cpu')
         checkpoint = torch.load(args.resume)
         args.start_epoch = checkpoint['epoch']
         best_mae_error = checkpoint['best_mae_error']

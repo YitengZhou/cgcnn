@@ -5,7 +5,7 @@ import csv
 import os
 import math
 
-# Fetch elasticity properties from Material Project
+# Fetch all energy properties from Material Project, including formation, absolute, band_gap and efermi
 if __name__ == '__main__':
     MAPI_KEY = 'h9GBsMfA1JvXbC7n'  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
     QUERY = 'mp-1180346'  # change this to the mp-id of your compound of interest
@@ -36,7 +36,8 @@ if __name__ == '__main__':
                                  'energy_per_atom',
                                  'formation_energy_per_atom',
                                  'structure',
-                                 'band_gap'])
+                                 'band_gap',
+                                 'efermi'])
 
     new_file = open('training/energy/energy.csv', 'w', encoding='utf-8')
     csv_writer = csv.writer(new_file)
@@ -61,17 +62,5 @@ if __name__ == '__main__':
         row.append(i['formation_energy_per_atom'])
         row.append(i['energy_per_atom'])
         row.append(i['band_gap'])
+        row.append(i['efermi'])
         csv_writer.writerow(row)
-
-    # # Fermi level
-    # dos = mpr.get_dos_by_material_id("mp-134")
-    # print(dos)
-    # len(dos)
-    # print(dos.efermi)
-    # print(dos.energies)
-    # print(dos.x)
-    # total_density = sum(dos.densities.values())  # Sum over both spins, if present
-    # print(total_density)
-    # min_index = np.argmin(abs(dos.energies - dos.efermi))
-    # total_density[min_index]
-    # print(total_density[min_index])

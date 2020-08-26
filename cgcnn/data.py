@@ -327,8 +327,11 @@ class CIFData(Dataset):
         # full_formula获得每一个原子的向量值
         atom_fea = np.vstack([self.ari.get_atom_fea(crystal[i].specie.number)
                               for i in range(len(crystal))])
+        # print(crystal)
         # 变成张量
         atom_fea = torch.Tensor(atom_fea)
+        # print(cif_id)
+        # print(len(atom_fea))
         all_nbrs = crystal.get_all_neighbors(self.radius, include_index=True)
         all_nbrs = [sorted(nbrs, key=lambda x: x[1]) for nbrs in all_nbrs]
         nbr_fea_idx, nbr_fea = [], []

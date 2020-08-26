@@ -15,7 +15,7 @@ with open('training/energy/energy.csv', 'r', encoding='utf-8') as f:
         # id
         line.append(row[0])
         # property
-        line.append(row[11])
+        line.append(row[10])
 
         # log G, K in elasticity
         # line.append(math.log(float(row[11])))

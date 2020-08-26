@@ -1,0 +1,53 @@
+option = {
+    backgroundColor:'white', //设置无背景色
+    legend: {
+        data: ['MAE', 'RMSE', 'R2'],
+        textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+    },
+    xAxis: {
+        type: 'category',
+        data: ['1', '2', '3', '4', '5'],
+        axisLabel: {
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            },axisTick: {
+                alignWithLabel: true,
+                inside: true
+            },
+    },
+    yAxis: {
+        type: 'value',
+        splitLine:{show: false},//去除网格线
+        axisTick:{
+                inside: true
+            },
+        axisLabel: {
+            textStyle: {
+                fontSize: 18,
+                fontWeight: 'bold'
+            }
+        }
+    },
+    series: [
+        {
+            name:'MAE',
+        data: [0.124, 0.111, 0.105, 0.101, 0.111],
+        type: 'line'
+        },
+        {
+            name:'RMSE',
+        data: [0.187, 0.179,0.166, 0.162, 0.177],
+        type: 'line'
+        },
+        {
+            name:'R2',
+        data: [0.969, 0.972, 0.975, 0.977, 0.973],
+        type: 'line'
+        }
+    ]
+};
