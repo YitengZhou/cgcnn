@@ -1,0 +1,49 @@
+option = {
+    backgroundColor:'white', //设置无背景色
+    legend: {textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }},
+    tooltip: {},
+    dataset: {
+        source: [
+            ['product', 'MAE-SGDM', 'MAE-ADAM', 'RMSE-SGDM','RMSE-ADAM','R2-SGDM','R2-ADAM'],
+            ['-4', 0.109,0.110, 0.166,0.165, 0.976,0.976],
+            ['-3', 0.100,0.103, 0.151,0.155, 0.972,0.972],
+            ['-2', 0.103,0.103, 0.155,0.1565, 0.979,0.976],
+        ]
+    },
+    xAxis: {type: 'category',
+        axisTick:{
+                inside: true
+            },
+            axisLabel: {
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            }
+    },
+    yAxis: {
+        splitLine:{show: false},//去除网格线
+        axisTick:{
+                inside: true
+            },
+            axisLabel: {
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            }
+    },
+    // Declare several bar series, each will be mapped
+    // to a column of dataset.source by default.
+    series: [
+        {type: 'bar',color:'#FF9900'},
+        {type: 'bar',color:'#FF6633'},
+        {type: 'bar',color:'#33FF00'},
+        {type: 'bar',color:'#00CC33'},
+        {type: 'bar',color:'#0066FF'},
+        {type: 'bar',color:'#0033FF'}
+    ]
+};

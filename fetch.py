@@ -23,7 +23,7 @@ if __name__ == '__main__':
                     'Ac', 'Th', 'Pa', 'U', 'Np', 'Pu']
 
     # search_key in material project, including elasticity, piezo
-    search_key = 'diel'
+    search_key = 'elasticity'
 
     data = mpr.query(criteria={'elements': {'$in': element_list},
                                'has_bandstructure': True,
@@ -42,13 +42,16 @@ if __name__ == '__main__':
                                  'structure',
                                  search_key])
 
-    print(data)
-    new_file = open('./training/' + search_key + '/' + search_key + '.csv', 'w', encoding='utf-8')
-    csv_writer = csv.writer(new_file)
+
 
     if search_key == 'elasticity':
+        new_file = open('./training/' + search_key + '/' + search_key + '.csv', 'w', encoding='utf-8')
+        csv_writer = csv.writer(new_file)
         new_file_warnings = open('./training/elasticity/elasticity_warnings.csv', 'w', encoding='utf-8')
         csv_writer_warnings = csv.writer(new_file_warnings)
+    else:
+        new_file = open('./training/' + search_key + '/' + search_key + '.csv', 'w', encoding='utf-8')
+        csv_writer = csv.writer(new_file)
 
 
     # 10666 with elasticity and 3948 with warnings label, 6718 without warnings label
@@ -78,13 +81,12 @@ if __name__ == '__main__':
             row.append(elasticity['K_Voigt_Reuss_Hill'])
             row.append(elasticity['elastic_anisotropy'])
             row.append(elasticity['poisson_ratio'])
+            cif_file = './training/elasticity/data/' + material_id + '.cif'
+            c.write_file(cif_file)
+            csv_writer_warnings.writerow(row)
             if elasticity['warnings']:
-                cif_file = './training/elasticity/data_warn/' + material_id + '.cif'
-                c.write_file(cif_file)
-                csv_writer_warnings.writerow(row)
+                continue
             else:
-                cif_file = './training/elasticity/data/' + material_id + '.cif'
-                c.write_file(cif_file)
                 csv_writer.writerow(row)
 
         # add eij_max

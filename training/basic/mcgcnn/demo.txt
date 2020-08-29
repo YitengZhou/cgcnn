@@ -1,0 +1,98 @@
+var data = [
+
+];
+
+// See https://github.com/ecomfe/echarts-stat
+var myRegression = ecStat.regression('linear', data);
+
+myRegression.points.sort(function(a, b) {
+    return a[0] - b[0];
+});
+
+option = {
+    backgroundColor:'white', //设置无背景色
+    title: {
+        text: 'Linear Regression',
+        subtext: 'By ecStat.regression',
+        sublink: 'https://github.com/ecomfe/echarts-stat',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
+    },
+    xAxis: {
+        type: 'value',
+        splitLine: {
+            show: false
+        },
+        axisTick: {
+                alignWithLabel: true,
+                inside: true
+            },
+        axisLabel: {
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            }
+    },
+    yAxis: {
+        type: 'value',
+        min: 0,
+        splitLine: {
+            show: false
+        },axisTick: {
+                alignWithLabel: true,
+                inside: true
+            },
+        axisLabel: {
+                textStyle: {
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }
+            }
+    },
+    series: [{
+        name: 'scatter',
+        type: 'scatter',
+        color: 'blue',
+        itemStyle: {
+                    normal: {
+                        opacity: 0.5
+                    }
+                },
+        emphasis: {
+            label: {
+                show: true,
+                position: 'left',
+                color: 'blue',
+                fontSize: 16
+            }
+        },
+        data: data
+    }, {
+        name: 'line',
+        type: 'line',
+        showSymbol: false,
+        data: myRegression.points,
+        markPoint: {
+            itemStyle: {
+                color: 'transparent'
+            },
+            label: {
+                // y = 0.1x + 0.4
+                show: false,
+                position: 'left',
+                formatter: myRegression.expression,
+                color: '#333',
+                fontSize: 14
+            },
+            data: [{
+                coord: myRegression.points[myRegression.points.length - 1]
+            }]
+        }
+    }]
+};
