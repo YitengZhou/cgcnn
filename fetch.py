@@ -1,9 +1,6 @@
 from pymatgen import MPRester
 from pymatgen.io.cif import CifWriter
-import numpy as np
 import csv
-import os
-import math
 
 # Fetch elasticity properties from Material Project
 if __name__ == '__main__':

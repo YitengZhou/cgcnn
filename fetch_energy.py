@@ -1,11 +1,8 @@
+# Fetch all energy properties from Material Project, including formation, absolute, band_gap and efermi
 from pymatgen import MPRester
 from pymatgen.io.cif import CifWriter
-import numpy as np
 import csv
-import os
-import math
 
-# Fetch all energy properties from Material Project, including formation, absolute, band_gap and efermi
 if __name__ == '__main__':
     MAPI_KEY = 'h9GBsMfA1JvXbC7n'  # You must change this to your Materials API key! (or set MAPI_KEY env variable)
     QUERY = 'mp-1180346'  # change this to the mp-id of your compound of interest
@@ -35,10 +32,11 @@ if __name__ == '__main__':
                                  'density',
                                  'energy_per_atom',
                                  'formation_energy_per_atom',
-                                 'structure',
                                  'band_gap',
-                                 'efermi'])
-
+                                 'efermi'
+                                 ])
+    print(len(data))
+    print(data)
     new_file = open('training/energy/energy.csv', 'w', encoding='utf-8')
     csv_writer = csv.writer(new_file)
     for i in data:
@@ -55,7 +53,7 @@ if __name__ == '__main__':
         row.append(i['energy_per_atom'])
         row.append(i['formation_energy_per_atom'])
 
-        # save cif and csv files
+        # save cif and energy properties csv files
         c = CifWriter(i['structure'])
         cif_file = './training/energy/data/' + material_id + '.cif'
         c.write_file(cif_file)
@@ -64,3 +62,4 @@ if __name__ == '__main__':
         row.append(i['band_gap'])
         row.append(i['efermi'])
         csv_writer.writerow(row)
+

@@ -6743,6 +6743,8 @@ option = {
     },
     xAxis: {
         type: 'value',
+        min:-0.1,
+        max:0.6,
         splitLine: {
             show: false
         },
@@ -6759,7 +6761,8 @@ option = {
     },
     yAxis: {
         type: 'value',
-        min:0,
+        min:-0.1,
+        max:0.6,
         splitLine: {
             show: false
         },axisTick: {
